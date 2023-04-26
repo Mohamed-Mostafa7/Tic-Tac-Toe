@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		E905965029F9A10E0066510B /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E905964F29F9A10E0066510B /* GameViewController.swift */; };
 		E9EDE1DC29F97FC100553B46 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDE1DB29F97FC100553B46 /* AppDelegate.swift */; };
 		E9EDE1DE29F97FC100553B46 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDE1DD29F97FC100553B46 /* SceneDelegate.swift */; };
 		E9EDE1E029F97FC100553B46 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E9EDE1DF29F97FC100553B46 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		E905964F29F9A10E0066510B /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		E9EDE1D829F97FC100553B46 /* Tic Tac Toe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tic Tac Toe.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		E9EDE1DB29F97FC100553B46 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E9EDE1DD29F97FC100553B46 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				E9EDE1DB29F97FC100553B46 /* AppDelegate.swift */,
 				E9EDE1DD29F97FC100553B46 /* SceneDelegate.swift */,
 				E9EDE1DF29F97FC100553B46 /* ViewController.swift */,
+				E905964F29F9A10E0066510B /* GameViewController.swift */,
 				E9EDE1E129F97FC100553B46 /* Main.storyboard */,
 				E9EDE1E429F97FC300553B46 /* Assets.xcassets */,
 				E9EDE1E629F97FC300553B46 /* LaunchScreen.storyboard */,
@@ -138,6 +141,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E905965029F9A10E0066510B /* GameViewController.swift in Sources */,
 				E9EDE1E029F97FC100553B46 /* ViewController.swift in Sources */,
 				E9EDE1DC29F97FC100553B46 /* AppDelegate.swift in Sources */,
 				E9EDE1DE29F97FC100553B46 /* SceneDelegate.swift in Sources */,
