@@ -320,6 +320,26 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uax-M2-57a">
+                                <rect key="frame" x="61.5" y="659" width="291" height="53"/>
+                                <color key="backgroundColor" red="0.0" green="0.56031829119999998" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="Uax-M2-57a" secondAttribute="height" multiplier="291:53" id="Wav-Jw-7iu"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Reset Board">
+                                    <fontDescription key="titleFontDescription" name="Impact" family="Impact" pointSize="27"/>
+                                    <color key="baseForegroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                        <integer key="value" value="10"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="resetBoardButtonTaped:" destination="GMn-nN-Kt3" eventType="touchUpInside" id="JsO-su-wiq"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="C5w-B4-tQ2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -328,6 +348,7 @@
                             <constraint firstItem="fKG-OU-HyA" firstAttribute="centerX" secondItem="279-oF-3b7" secondAttribute="centerX" id="2yQ-MU-Bru"/>
                             <constraint firstItem="tID-7E-zFh" firstAttribute="leading" secondItem="mDQ-fj-QAo" secondAttribute="trailing" constant="5" id="3BP-ug-RAz"/>
                             <constraint firstItem="279-oF-3b7" firstAttribute="trailing" secondItem="C5w-B4-tQ2" secondAttribute="trailing" id="43v-Lx-zih"/>
+                            <constraint firstItem="Uax-M2-57a" firstAttribute="top" secondItem="fKG-OU-HyA" secondAttribute="bottom" constant="60" id="4Gc-CU-FKT"/>
                             <constraint firstItem="lCf-yb-bDH" firstAttribute="leading" secondItem="C5w-B4-tQ2" secondAttribute="leading" constant="16" id="96X-DB-j9i"/>
                             <constraint firstItem="C5w-B4-tQ2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="tID-7E-zFh" secondAttribute="trailing" symbolic="YES" id="A6O-kh-yOO"/>
                             <constraint firstItem="C5w-B4-tQ2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="bNR-63-2Im" secondAttribute="trailing" symbolic="YES" id="Kbh-y7-qyR"/>
@@ -336,11 +357,13 @@
                             <constraint firstItem="279-oF-3b7" firstAttribute="top" secondItem="K0e-PE-cmg" secondAttribute="top" id="Sp5-63-DaN"/>
                             <constraint firstItem="mDQ-fj-QAo" firstAttribute="leading" secondItem="Ge6-RH-nVf" secondAttribute="leading" id="VvR-bx-aBj"/>
                             <constraint firstItem="bNR-63-2Im" firstAttribute="centerY" secondItem="Ge6-RH-nVf" secondAttribute="centerY" id="XfN-Aw-ZM4"/>
+                            <constraint firstItem="Uax-M2-57a" firstAttribute="centerX" secondItem="279-oF-3b7" secondAttribute="centerX" id="Y7t-nz-xtp"/>
                             <constraint firstItem="279-oF-3b7" firstAttribute="leading" secondItem="C5w-B4-tQ2" secondAttribute="leading" id="bpA-Bz-a0m"/>
                             <constraint firstItem="C5w-B4-tQ2" firstAttribute="trailing" secondItem="Lg8-7O-2iZ" secondAttribute="trailing" constant="16" id="br0-9f-an3"/>
                             <constraint firstItem="Ge6-RH-nVf" firstAttribute="top" secondItem="lCf-yb-bDH" secondAttribute="bottom" constant="16" id="d1h-VZ-i0b"/>
                             <constraint firstItem="Lg8-7O-2iZ" firstAttribute="top" secondItem="C5w-B4-tQ2" secondAttribute="top" constant="80" id="dVs-FK-8Ak"/>
                             <constraint firstItem="mDQ-fj-QAo" firstAttribute="top" secondItem="Ge6-RH-nVf" secondAttribute="bottom" constant="16" id="dkL-yK-oJE"/>
+                            <constraint firstItem="Uax-M2-57a" firstAttribute="width" secondItem="279-oF-3b7" secondAttribute="width" multiplier="0.702899" id="eeM-4S-6Dt"/>
                             <constraint firstItem="C5w-B4-tQ2" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="mDQ-fj-QAo" secondAttribute="trailing" symbolic="YES" id="i2Z-fb-i3Z"/>
                             <constraint firstItem="bNR-63-2Im" firstAttribute="leading" secondItem="Ge6-RH-nVf" secondAttribute="trailing" constant="5" id="jud-bv-ZUV"/>
                             <constraint firstItem="lCf-yb-bDH" firstAttribute="height" secondItem="Lg8-7O-2iZ" secondAttribute="height" multiplier="0.42" id="lxo-kk-2IG"/>
@@ -363,6 +386,7 @@
                         <outlet property="computerScoreLabel" destination="tID-7E-zFh" id="HWv-Ch-uEC"/>
                         <outlet property="playerNameLabel" destination="Ge6-RH-nVf" id="We5-yJ-aOK"/>
                         <outlet property="playerScoreLabel" destination="bNR-63-2Im" id="8Tc-Nd-yyW"/>
+                        <outlet property="resetButton" destination="Uax-M2-57a" id="pir-1f-Daf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrW-uy-Jp6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

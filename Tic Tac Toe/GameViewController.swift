@@ -22,6 +22,7 @@ class GameViewController: UIViewController {
     @IBOutlet var box7: UIImageView!
     @IBOutlet var box8: UIImageView!
     @IBOutlet var box9: UIImageView!
+    @IBOutlet var resetButton: UIButton!
     
     var playerName: String? = ""
     var lastValue = "o"
@@ -35,6 +36,7 @@ class GameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         playerNameLabel.text = playerName
+        resetButton.isEnabled = false
         
         createTap(on: box1, type: .one)
         createTap(on: box2, type: .two)
@@ -46,6 +48,12 @@ class GameViewController: UIViewController {
         createTap(on: box8, type: .eight)
         createTap(on: box9, type: .nine)
     }
+    
+    @IBAction func resetBoardButtonTaped(_ sender: UIButton) {
+        resetGame()
+        resetButton.isEnabled = false
+    }
+    
     
     func createTap (on imageView: UIImageView, type box: Box){
         let tap = UITapGestureRecognizer(target: self, action: #selector(self.boxClicked(_:)))
@@ -61,10 +69,11 @@ class GameViewController: UIViewController {
             makeChoice(selectedBox)
             playerChoices.append(Box(rawValue: name)!)
             checkIfWon()
-            DispatchQueue.main.asyncAfter(deadline: .now() + 1){
-                self.computerPlay()
+            if !resetButton.isEnabled {
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5){
+                    self.computerPlay()
+                }
             }
-            
         }
     }
     
@@ -109,7 +118,6 @@ class GameViewController: UIViewController {
                     if firstBox.image != nil, secondBox.image != nil {
                         // Check if they are both marked with computer mark. if both of them have the computer mark then if the computer mark this box it will win.
                         if firstBox.image?.pngData() == computerImage.pngData(), secondBox.image?.pngData() == computerImage.pngData() {
-                            print("winning case")
                             let boxToImgView = getBox(from: box.rawValue)
                             return (boxToImgView, box)
                         }
@@ -131,7 +139,6 @@ class GameViewController: UIViewController {
                     if firstBox.image != nil, secondBox.image != nil {
                         // make sure the two mark are both the player mark. if they are then the computer must mark this box to avoid player from winning.
                         if secondBox.image?.pngData() == firstBox.image?.pngData() {
-                            print("not losing case")
                             let boxToImgView = getBox(from: box.rawValue)
                             return (boxToImgView, box)
                         }
@@ -165,16 +172,19 @@ class GameViewController: UIViewController {
             
             if userMatch == valid.count {
                 playerScoreLabel.text = String((Int(playerScoreLabel.text ?? "0") ?? 0) + 1)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ){ self.resetGame() }
+                resetButton.isEnabled = true
+                disableAllBoxes()
                 break
             } else if computerMatch == valid.count {
                 computerScoreLabel.text = String((Int(computerScoreLabel.text ?? "0") ?? 0) + 1)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ){ self.resetGame() }
+                resetButton.isEnabled = true
+                disableAllBoxes()
                 break
             }
         }
         if computerChoices.count + playerChoices.count == 9 {
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.5 ){ self.resetGame() }
+            resetButton.isEnabled = true
+            disableAllBoxes()
         }
         
     }
@@ -204,6 +214,23 @@ class GameViewController: UIViewController {
         return correct
     }
     
+    func disableAllBoxes() {
+        var allBoxesArray = [box1, box2, box3, box4, box5, box6, box7, box8, box9]
+        for box in allBoxesArray {
+            box?.layer.opacity = 0.5
+            box?.isUserInteractionEnabled = false
+        }
+    }
+    
+    func enableAllBoxes() {
+        var allBoxesArray = [box1, box2, box3, box4, box5, box6, box7, box8, box9]
+        for box in allBoxesArray {
+            box?.layer.opacity = 1
+            box?.isUserInteractionEnabled = true
+        }
+    }
+    
+    
     func resetGame() {
         for name in Box.allCases {
             let box = getBox(from: name.rawValue)
@@ -212,6 +239,7 @@ class GameViewController: UIViewController {
         lastValue = "o"
         playerChoices = []
         computerChoices = []
+        enableAllBoxes()
     }
     
     func getBox(from name: String) -> UIImageView {
