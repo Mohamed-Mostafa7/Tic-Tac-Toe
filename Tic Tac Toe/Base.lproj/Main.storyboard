@@ -285,8 +285,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Computer:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mDQ-fj-QAo">
-                                <rect key="frame" x="16" y="216" width="81" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="219.5" width="93" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -303,20 +303,26 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ge6-RH-nVf">
-                                <rect key="frame" x="16" y="179.5" width="51.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="16" y="179.5" width="59" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bNR-63-2Im">
-                                <rect key="frame" x="72.5" y="179.5" width="10.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="80" y="179.5" width="12.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tID-7E-zFh">
-                                <rect key="frame" x="102" y="216" width="10.5" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="114" y="219.5" width="12.5" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="YOU WON !" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="c7s-zV-rpy">
+                                <rect key="frame" x="140.5" y="254" width="133" height="33"/>
+                                <fontDescription key="fontDescription" name="MarkerFelt-Thin" family="Marker Felt" pointSize="30"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -355,8 +361,10 @@
                             <constraint firstItem="Lg8-7O-2iZ" firstAttribute="leading" secondItem="lCf-yb-bDH" secondAttribute="trailing" constant="16" id="L9x-7I-Isr"/>
                             <constraint firstItem="lCf-yb-bDH" firstAttribute="centerY" secondItem="Lg8-7O-2iZ" secondAttribute="centerY" id="QEF-ZS-fsa"/>
                             <constraint firstItem="279-oF-3b7" firstAttribute="top" secondItem="K0e-PE-cmg" secondAttribute="top" id="Sp5-63-DaN"/>
+                            <constraint firstItem="fKG-OU-HyA" firstAttribute="top" secondItem="c7s-zV-rpy" secondAttribute="bottom" constant="10" id="VNg-WE-VZ6"/>
                             <constraint firstItem="mDQ-fj-QAo" firstAttribute="leading" secondItem="Ge6-RH-nVf" secondAttribute="leading" id="VvR-bx-aBj"/>
                             <constraint firstItem="bNR-63-2Im" firstAttribute="centerY" secondItem="Ge6-RH-nVf" secondAttribute="centerY" id="XfN-Aw-ZM4"/>
+                            <constraint firstItem="c7s-zV-rpy" firstAttribute="centerX" secondItem="279-oF-3b7" secondAttribute="centerX" id="Xrg-oh-zRD"/>
                             <constraint firstItem="Uax-M2-57a" firstAttribute="centerX" secondItem="279-oF-3b7" secondAttribute="centerX" id="Y7t-nz-xtp"/>
                             <constraint firstItem="279-oF-3b7" firstAttribute="leading" secondItem="C5w-B4-tQ2" secondAttribute="leading" id="bpA-Bz-a0m"/>
                             <constraint firstItem="C5w-B4-tQ2" firstAttribute="trailing" secondItem="Lg8-7O-2iZ" secondAttribute="trailing" constant="16" id="br0-9f-an3"/>
@@ -387,6 +395,7 @@
                         <outlet property="playerNameLabel" destination="Ge6-RH-nVf" id="We5-yJ-aOK"/>
                         <outlet property="playerScoreLabel" destination="bNR-63-2Im" id="8Tc-Nd-yyW"/>
                         <outlet property="resetButton" destination="Uax-M2-57a" id="pir-1f-Daf"/>
+                        <outlet property="winningLabel" destination="c7s-zV-rpy" id="Fhk-FE-XtH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UrW-uy-Jp6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -23,6 +23,7 @@ class GameViewController: UIViewController {
     @IBOutlet var box8: UIImageView!
     @IBOutlet var box9: UIImageView!
     @IBOutlet var resetButton: UIButton!
+    @IBOutlet var winningLabel: UILabel!
     
     var playerName: String? = ""
     var lastValue = "o"
@@ -37,6 +38,7 @@ class GameViewController: UIViewController {
         // Do any additional setup after loading the view.
         playerNameLabel.text = playerName
         resetButton.isEnabled = false
+        winningLabel.isHidden = true
         
         createTap(on: box1, type: .one)
         createTap(on: box2, type: .two)
@@ -173,17 +175,23 @@ class GameViewController: UIViewController {
             if userMatch == valid.count {
                 playerScoreLabel.text = String((Int(playerScoreLabel.text ?? "0") ?? 0) + 1)
                 resetButton.isEnabled = true
+                winningLabel.isHidden = false
+                winningLabel.text = "YOU WON 🥳"
                 disableAllBoxes()
                 break
             } else if computerMatch == valid.count {
                 computerScoreLabel.text = String((Int(computerScoreLabel.text ?? "0") ?? 0) + 1)
                 resetButton.isEnabled = true
+                winningLabel.isHidden = false
+                winningLabel.text = "YOU LOST 😢"
                 disableAllBoxes()
                 break
             }
         }
         if computerChoices.count + playerChoices.count == 9 {
             resetButton.isEnabled = true
+            winningLabel.isHidden = false
+            winningLabel.text = "IT's A DRAW!"
             disableAllBoxes()
         }
         
@@ -240,6 +248,7 @@ class GameViewController: UIViewController {
         playerChoices = []
         computerChoices = []
         enableAllBoxes()
+        winningLabel.isHidden = true
     }
     
     func getBox(from name: String) -> UIImageView {
